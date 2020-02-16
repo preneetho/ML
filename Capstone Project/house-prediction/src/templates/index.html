@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      
+</head>
+
+<body>
+ <div >
+	<h1>Predict House Price</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <table align="center" width="95%">
+    <tr> 
+        <td>   
+            cid
+        </td>
+        <td>   
+            <input type="text" name="cid"  value="8731981640" required="required" />
+        </td>
+        <td>   
+            dayhours
+        </td>
+        <td>   
+            <input type="text" name="dayhours"  value="20141204T000000" required="required" />
+        </td>
+        <td>   
+            room_bed
+        </td>
+        <td>   
+            <input type="text" name="room_bed"  value="4" required="required" />
+        </td>
+ 
+    </tr>
+    <tr> 
+         <td>   
+            room_bath
+        </td>
+        <td>   
+            <input type="text" name="room_bath"  value="2.5" required="required" />
+        </td>
+       
+        <td>   
+            living_measure
+        </td>
+        <td>   
+            <input type="text" name="living_measure"  value="2550" required="required" />
+        </td>
+        
+        <td>   
+            lot_measure
+        </td>
+        <td>   
+            <input type="text" name="lot_measure"  value="7500" required="required" />
+        </td>
+       
+ 
+    </tr>
+    <tr> 
+        
+        
+        <td>   
+            ceil
+        </td>
+        <td>   
+            <input type="text" name="ceil"  value="1" required="required" />
+        </td>
+        <td>   
+            coast
+        </td>
+        <td>   
+            <input type="text" name="coast"  value="0" required="required" />
+        </td>
+         <td>   
+            sight
+        </td>
+        <td>   
+            <input type="text" name="sight"  value="0" required="required" />
+        </td>
+        
+ 
+    </tr>
+    <tr> 
+        
+       
+        
+        <td>   
+            condition
+        </td>
+        <td>   
+            <input type="text" name="condition"  value="3" required="required" />
+        </td>
+        
+        <td>   
+            quality
+        </td>
+        <td>   
+            <input type="text" name="quality"  value="8" required="required" />
+        </td>
+        <td>   
+            ceil_measure
+        </td>
+        <td>   
+            <input type="text" name="ceil_measure"  value="1750" required="required" />
+        </td>
+        
+ 
+    </tr>
+    
+    <tr> 
+        
+        
+        <td>   
+            basement
+        </td>
+        <td>   
+            <input type="text" name="basement"  value="800" required="required" />
+        </td>
+        <td>   
+            yr_built
+        </td>
+        <td>   
+            <input type="text" name="yr_built"  value="1976" required="required" />
+        </td>
+        
+        <td>   
+            yr_renovated
+        </td>
+        <td>   
+            <input type="text" name="yr_renovated"  value="0" required="required" />
+        </td>
+        
+ 
+    </tr>
+    <tr> 
+        
+        <td>   
+            zipcode
+        </td>
+        <td>   
+            <input type="text" name="zipcode"  value="98023" required="required" />
+        </td>
+        <td>   
+            lat
+        </td>
+        <td>   
+            <input type="text" name="lat"  value="47.3165" required="required" />
+        </td>
+        
+         <td>   
+            long
+        </td>
+        <td>   
+            <input type="text" name="long"  value="-122.386" required="required" />
+        </td>
+ 
+    </tr>
+    
+    <tr> 
+        
+        <td>   
+            living_measure15
+        </td>
+        <td>   
+            <input type="text" name="living_measure15"  value="2260" required="required" />
+        </td>
+        <td>   
+            lot_measure15
+        </td>
+        <td>   
+            <input type="text" name="lot_measure15"  value="8800" required="required" />
+        </td>
+        
+        <td>   
+            furnished
+        </td>
+        <td>   
+            <input type="text" name="furnished"  value="0" required="required" />
+        </td>
+        
+ 
+    </tr>
+    
+    <tr> 
+        
+        
+        <td>   
+            total_area
+        </td>
+        <td>   
+            <input type="text" name="total_area"  value="10050" required="required" />
+        </td>
+        <td>   
+            &nbsp;
+        </td>
+        <td>   
+            &nbsp;
+        </td>
+        <td>   
+            &nbsp;
+        </td>
+        <td>   
+            &nbsp;
+        </td>
+ 
+    </tr>
+    
+    
+    <table>
+
+    <button type="submit" >Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
